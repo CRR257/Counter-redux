@@ -1,33 +1,26 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from "../actions/actionTypes";
+import { updateObject } from "../utility";
 
 const initialState = {
-  counter: 0,
+  counter: 0
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.INCREMENT:
-      return {
-        ...state,
-        counter: state.counter + 1
-      };
+      return updateObject(state, { counter: state.counter + 1 });
+
     case actionTypes.SUBTRACT:
-      return {
-        ...state,
-        counter: state.counter - 1
-      };
+      return updateObject(state, { counter: state.counter - 1 });
+
     case actionTypes.INCREMENT_BY:
-      return {
-        ...state,
-        counter: state.counter + action.value
-      };
+      return updateObject(state, { counter: state.counter + action.value });
+
     case actionTypes.SUBTRACT_BY:
-      return {
-        ...state,
-        counter: state.counter - action.value
-      };
+      return updateObject(state, { counter: state.counter - action.value });
+    default:
+      return state;
   }
-  return state;
 };
 
 export default reducer;

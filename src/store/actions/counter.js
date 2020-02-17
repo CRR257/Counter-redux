@@ -2,13 +2,13 @@ import * as actionTypes from "./actionTypes";
 
 export const increment = () => {
   return {
-    type: actionTypes.INCREMENT
+    type: actionTypes.INCREMENT,
   };
 };
 
 export const subtract = () => {
   return {
-    type: actionTypes.SUBTRACT
+    type: actionTypes.SUBTRACT,
   };
 };
 

@@ -2,26 +2,25 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import CounterControl from "../../components/CounterControl/CounterControl";
-import CounterOutput from "../../components/CounterOutput/CounterOutput";
 import * as actionCreators from '../../store/actions/index';
+import ShowFinalResult from "../../components/ShowFinalResult/ShowFinalResult";
+import CounterResults from "../../components/CounterResults/CounterResults";
 
 class Counter extends Component {
-
   render() {
-    console.log(this.props.storedResults[0]);
     return (
       <div>
-        <CounterOutput value={this.props.ctr} />
+        <ShowFinalResult />
         <CounterControl
-          label="Increment"
+          label="Increment 1"
           clicked={this.props.onIcrementCounter}
         />
         <CounterControl
-          label="Subtract"
+          label="Subtract 1"
           clicked={this.props.onSubtractCounter}
         />
         <CounterControl
-          label="Add 10"
+          label="Increment 10"
           clicked={this.props.onIncrementCounterBy5}
         />
         <CounterControl
@@ -29,17 +28,7 @@ class Counter extends Component {
           clicked={this.props.onSubtractCounterBy5}
         />
         <hr />
-        <button onClick={() => this.props.onStoreResult(this.props.ctr)}>Store Result:</button>
-        <ul>
-          {this.props.storedResults.map(storedResult => (
-            <li
-              key={storedResult.id}
-              onClick={() => this.props.onDeleteResult(storedResult.id)}
-            >
-              {storedResult.value}
-            </li>
-          ))}
-        </ul>
+        <CounterResults />
       </div>
     );
   }
@@ -63,8 +52,6 @@ const mapDispatchToProps = dispatch => {
     onSubtractCounter: () => dispatch(actionCreators.subtract()),
     onIncrementCounterBy5: () => dispatch(actionCreators.incrementBy(10)),
     onSubtractCounterBy5: () => dispatch(actionCreators.substractBy(15)),
-    onStoreResult: (result) => dispatch(actionCreators.storeResult(result)), // we split reducers
-    onDeleteResult: (id) => dispatch(actionCreators.deleteResult(id))
   };
 };
 

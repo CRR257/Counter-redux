@@ -11,7 +11,6 @@ import App from './App';
 import './index.css';
 
 
-
 const rootReducer = combineReducers({
     ctr: counterReducer,
     res: resultReducer,
