@@ -4,8 +4,8 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import resultReducer from './store/reducers/result';
-import counterReducer from './store/reducers/counter';
+import resultReducer from '../src/components/CounterResults/store/reducer';
+import counterReducer from '../src/containers/Counter/store/reducers';
 import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import './index.css';
@@ -13,7 +13,7 @@ import './index.css';
 
 const rootReducer = combineReducers({
     ctr: counterReducer,
-    res: resultReducer,
+    res: resultReducer
 });
 
 // Middleware

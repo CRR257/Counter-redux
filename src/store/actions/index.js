@@ -3,9 +3,9 @@ export {
     subtract,
     incrementBy,
     substractBy
-} from './counter';
+} from '../../containers/Counter/store/actions';
 
 export {
     storeResult,
     deleteResult
-} from './result';
+} from '../../components/CounterResults/store/actions';

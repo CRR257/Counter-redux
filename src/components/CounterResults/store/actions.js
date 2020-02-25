@@ -1,4 +1,4 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from "../../../store/actions/actionTypes";
 
 export const saveResult = res => {
   return {

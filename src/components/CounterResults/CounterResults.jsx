@@ -22,7 +22,7 @@ class counterResults extends Component {
               className="container-result"
             >
               => {storedResult.value}
-              <span class="container-result__tooltiptext">Delete me</span>
+              <span className="container-result__tooltiptext">Delete me</span>
             </li>
           ))}
         </ul>

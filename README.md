@@ -2,7 +2,9 @@
 
 ## Introduction
 
-App to practice Redux
+App to practice Redux.
+User can add 1 or 10 or substract 1 or 10 from the final result.
+If user select the button "Show results * 2" in the component Results it shows the final result * 2. Then user can click a result, and delete it.  
 
 
 ## Available Scripts
